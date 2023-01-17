@@ -1,4 +1,4 @@
-# Reuse Bazaar
+# Reuse Bazaar                                                                      <img src='https://user-images.githubusercontent.com/101567617/212965405-447c3f59-c368-4abf-8b0a-0597aa6e70bf.jpeg' width='100px' height='100px' />
 
 ## Members (Assigned To)
 * **Abdus Salam**
