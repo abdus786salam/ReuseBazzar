@@ -1,7 +1,23 @@
-const express = require('express')
-
-const app = express()
-
-app.listen(4551,()=>{
-    console.log('running at http://localhost:4551')
-})
+const express = require("express");
+const cors = require("cors");
+const { connected } = require("./config/db");
+const { registerRouter } = require("./routes/register.routes");
+require("dotenv").config();
+const app = express();
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+app.use(express.json());
+app.use("/users", registerRouter);
+app.listen(process.env.port, async () => {
+  try {
+    await connected;
+    console.log("Connected to db");
+  } catch (error) {
+    console.log(error);
+    console.log("Connection field to db");
+  }
+  console.log(`running at ${process.env.port}`);
+});
