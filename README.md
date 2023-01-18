@@ -1,4 +1,6 @@
-# Reuse Bazaar                                                                      <img src='https://user-images.githubusercontent.com/101567617/212979297-c4c8b234-e25f-4bde-bccd-80eae598a151.png' width=100px height=100px style="border-radius:50%" />
+# Reuse Bazaar                                                                      <img src='https://user-images.githubusercontent.com/101567617/213125852-58bea555-6c3e-40ad-8aa2-cc2bbc271580.png' width=150px />
+![logo](https://user-images.githubusercontent.com/101567617/213124916-3eb14779-abbf-4134-a802-ed83dc2d03ed.png)
+![logo-removebg-preview](https://user-images.githubusercontent.com/101567617/213125852-58bea555-6c3e-40ad-8aa2-cc2bbc271580.png)
 
 ## Members (Assigned To)
 * **Abdus Salam**
