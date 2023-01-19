@@ -1,11 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-import { Navbar } from './component/Navbar/navbar';
+
+
+import AllRoutes from './higherOrderFunc/AllRoutes';
 
 function App() {
   return (
-    <div className="App">
-      {/* <Navbar/> */}
+    <div>
+      <AllRoutes />
+      
+
     </div>
   );
 }
