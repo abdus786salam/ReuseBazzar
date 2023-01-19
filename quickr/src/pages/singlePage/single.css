@@ -1,0 +1,39 @@
+
+
+.sml-cont
+{
+    padding-right: 20px;
+}
+.row
+{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.sml-img-row
+{
+    display: flex;
+    justify-content: space-around;
+}
+
+.col-2 img
+{
+    max-width: 100%;
+    
+}
+
+.imgdisplay
+{
+    display: flex;
+}
+
+.sml-img-col
+{
+    cursor: pointer;
+}
+.sin-prod .col-2 img{
+    padding: 3px;
+}
