@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const { connected } = require("./config/db");
 const { registerRouter } = require("./routes/register.routes");
+const { bikeRouter } = require("./routes/bike.routes");
 require("dotenv").config();
 const app = express();
 app.use(
@@ -11,6 +12,7 @@ app.use(
 );
 app.use(express.json());
 app.use("/users", registerRouter);
+app.use("/bikes", bikeRouter);
 app.listen(process.env.port, async () => {
   try {
     await connected;
