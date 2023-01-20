@@ -3,7 +3,10 @@
 const initialState={
     isCatAndBike:false,
     isMobile:false,
-    isElectronics:false
+    isElectronics:false,
+    isRealEstate:false,
+    isHomeLife:false,
+    isJob:false,
 }
 
 export const reducer = (state=initialState,action) =>{
@@ -24,6 +27,24 @@ export const reducer = (state=initialState,action) =>{
            return{
             ...initialState,
             isElectronics:!state.isElectronics
+           }
+        }
+        case "realEstate":{
+           return{
+            ...initialState,
+            isRealEstate:!state.isRealEstate
+           }
+        }
+        case "homeAndLifestyle":{
+           return{
+            ...initialState,
+            isHomeLife:!state.isHomeLife
+           }
+        }
+        case "jobs":{
+           return{
+            ...initialState,
+            isJob:!state.isJob
            }
         }
         default:{
