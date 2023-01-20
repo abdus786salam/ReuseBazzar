@@ -1,6 +1,7 @@
 
 
 import { Navbar } from './Components/Navbar/navbar';
+
 import AllRoutes from './higherOrderFunc/AllRoutes';
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
       <Navbar/>
       <AllRoutes />
       
-
+     
     </div>
   );
 }
