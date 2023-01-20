@@ -1,11 +1,13 @@
 
 
+import { Navbar } from './Components/Navbar/navbar';
 
 import AllRoutes from './higherOrderFunc/AllRoutes';
 
 function App() {
   return (
     <div>
+      <Navbar/>
       <AllRoutes />
       
      

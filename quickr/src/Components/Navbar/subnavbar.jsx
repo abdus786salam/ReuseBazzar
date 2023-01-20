@@ -63,15 +63,13 @@ function Subnavbar(){
                 FURNITURE & DECOR
             </MenuButton>
             <MenuList bg="red" aria-orientation="horizontal" display="flex" w="1000px">
-                <MenuGroup>
-                    <MenuItem>Space 1</MenuItem>
-                    <MenuItem>Space 1</MenuItem>
-                    <MenuItem>Space 1</MenuItem>
-                    <MenuItem>Space 1</MenuItem>
-                    <MenuItem>Space 1</MenuItem>
-                    <MenuItem>Space 1</MenuItem>
+                <MenuGroup title="All Furniture">
+                    <MenuItem>Used Furniture</MenuItem>
+                    <MenuItem>Refurbished Furniture</MenuItem>
+                    <MenuItem>Brand New Furniture</MenuItem>
+                    <MenuItem>Unboxed Furniture</MenuItem>
                 </MenuGroup>
-                <MenuGroup>
+                <MenuGroup title="Bed Room">
                     <MenuItem>Space 3</MenuItem>
                     <MenuItem>Space 1</MenuItem>
                     <MenuItem>Space 1</MenuItem>
