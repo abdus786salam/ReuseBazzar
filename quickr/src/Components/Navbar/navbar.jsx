@@ -8,6 +8,7 @@ import { RiArrowDropDownLine } from "react-icons/ri"
 import {ChevronDownIcon, Search2Icon} from "@chakra-ui/icons"
 import logo from "../../Assets/finallogo.jpeg"
 import { Subnavbar } from "./subnavbar"
+import { LoginModal } from "./loginmodal"
 function Navbar(){
 
     const city=["Ahmedabad","Bangalore","Chandigarh","Chennai","Coimbatore","Delhi","Hydrabad","Kochi","Kolkata","Mumbai","Pune"]
@@ -62,7 +63,8 @@ return(
         </Flex>
         <Flex alignItems="center" mr="3%" gap="7px">
             <BiUserCircle size="1.5rem"/>
-            <Text fontSize="lg">Login/Register</Text>
+            <LoginModal/>
+            {/* <Text fontSize="lg">Login/Register</Text> */}
         </Flex>
        
         <Box>
