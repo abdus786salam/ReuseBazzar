@@ -1,5 +1,6 @@
 
 
+
 import AllRoutes from './higherOrderFunc/AllRoutes';
 
 function App() {
@@ -7,7 +8,7 @@ function App() {
     <div>
       <AllRoutes />
       
-
+     
     </div>
   );
 }
