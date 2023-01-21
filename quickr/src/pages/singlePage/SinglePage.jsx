@@ -1,92 +1,243 @@
 
 
-import { Box, Button, Stack, Text } from '@chakra-ui/react'
+import { Box, Button, Flex,Image, List,  ListIcon,  ListItem, Stack, Table,  Td, Text, Tr, UnorderedList } from '@chakra-ui/react'
 import React from 'react'
-import "./single.css"
+
+import { MdCheckCircle } from 'react-icons/md'
+import { Link } from 'react-router-dom'
 const SinglePage = () => {
 
   return(
-    <Box p={4} display={{ lg: 'flex' }}  sx={{width:{xs:"100%",sm:"358px",md:'320px'},boxShadow:"none",borderRadius:0}} >
-  <Box width={{ lg:'flex' ,lg:"1200px",md:'800px'}} >
-<div className='sml-cont sin-prod'>
-<div className='row'>
-  <div className='col-2 '>
-    <div className='imgdisplay'> <img src='https://bit.ly/2jYM25F'
-      alt='Woman paying for a purchase'
-      width='50%' id = 'prod-img'/>
-       <img src='https://bit.ly/2jYM25F'
-      alt='Woman paying for a purchase'
-      width='50%' id = 'prod-img'/>
-      </div>
-   
-    <div className='sml-img-row'>
-    <div className='sml-img-col'>
-    <img src='https://bit.ly/2jYM25F'
-      alt='Woman paying for a purchase'
-      width='100%' className= 'sml-img'/>
-    </div>
+    // <Stack >
+    // <Box pos="fixed" w="100%" zIndex={2}></Box>
+    <Box  mt={14}   display={{ lg: 'flex',md:"flex" }} >
+    <Stack  width={{ lg:"55%",md:'50%'}}>
+      <Box gap={2} style={{cursor:"pointer"}} display= "flex">
+    <Stack >
+    <Image src='https://bit.ly/2jYM25F'
+      alt='Sorry, Img crashed'
+      width='100%'/>
+    </Stack>
+    <Stack >
+    <Image src='https://bit.ly/2jYM25F'
+      alt='Sorry, Img crashed'
+      width='100%'/>
+    </Stack>
+      </Box>
+    <Box gap={2} style={{cursor:"pointer"}} display= "flex">
+    <Stack >
+    <Image src='https://bit.ly/2jYM25F'
+      alt='Sorry, Img crashed'
+      width='100%'/>
+    </Stack>
 
-    <div className='sml-img-col'>
-    <img src='https://bit.ly/2jYM25F'
-      alt='Woman paying for a purchase'
-      width='100%' className= 'sml-img'/>
-    </div>
+    <Stack >
+    <Image src='https://bit.ly/2jYM25F'
+      alt='Sorry, Img crashed'
+      width='100%'/>
+    </Stack>
 
-    <div className='sml-img-col'>
-    <img src='https://bit.ly/2jYM25F'
-      alt='Woman paying for a purchase'
-      width='100%' className= 'sml-img'/>
-    </div>
-    </div>
-  </div>
-</div>
-  </div>
-  </Box>
+    <Stack >
+    <Image src='https://bit.ly/2jYM25F'
+      alt='Sorry, Img crashed'
+      width='100%'/>
+    </Stack>
+    </Box>
+
+
+
+
+    <Box  >
+     <Stack direction="row" gap={"10%"}  fontWeight='450' textTransform='camelcase' mt={6} fontSize={{ lg: '2rem' ,md:'1.8rem',sm:'1.6rem'}} color="rgb(51,51,51)" borderBottom="1px solid rgb(176,176,176)" aligntems = "center" p={2} >
+      <Link to='/' >
+      Ad Details
+      </Link>
+      <Link to='/' style={{display:'flex',alignItems:'center'}}>
+      Description
+      </Link>
+     </Stack>
+
+  
+    <Stack>
+
+    <Text  fontWeight='bolder' textTransform='camelcase' mt={6} fontSize={{ lg: '2rem' ,md:'1.8rem',sm:'1.6rem'}} lineHeight="normal" color="rgb(51,51,51)">Ad Details</Text>
+            
+    <Stack direction={"row"}>
+          <Table variant='normal' borderRight="2px solid rgb(176,176,176)" textTransform='camelcase' mt={6} fontSize={{ lg: '1.3rem' ,md:'1.2rem',sm:'1rem'}}>
+                <Td  color='#7e7e7e'  >Ad ID</Td>
+                <Td fontWeight='500' >363403408</Td>
+          
+              <Tr>
+              <Td  color='#7e7e7e'  >Furniture Type</Td>
+                <Td fontWeight='500' >Bed Sets</Td>
+              </Tr>
+
+              <Tr>
+              <Td  color='#7e7e7e'  >Brand Name</Td>
+                <Td fontWeight='500' >Others</Td>
+              </Tr>
+
+              <Tr>
+              <Td  color='#7e7e7e'  >Furniture Material</Td>
+                <Td fontWeight='500' >Solid Wood (Teak)</Td>
+              </Tr>
+
+          </Table>
+
+          <Table variant='normal' border={"none"} textTransform='camelcase' mt={6} fontSize={{ lg: '1.3rem' ,md:'1.2rem',sm:'1rem'}}>
+                <Td  color='#7e7e7e'  >Condition</Td>
+                <Td fontWeight='500' >Heavily Used</Td>
+          
+              <Tr border={"none"}>
+              <Td  color='#7e7e7e'  >Furniture SubType</Td>
+                <Td fontWeight='500' >Without Storage</Td>
+              </Tr>
+
+              <Tr>
+              <Td  color='#7e7e7e'  >Furniture Age</Td>
+                <Td fontWeight='500' >More Than 8 Years</Td>
+              </Tr>
+
+              <Tr>
+              <Td  color='#7e7e7e'  >Seller Type</Td>
+                <Td fontWeight='500' >Individual</Td>
+              </Tr>
+          </Table>
+    </Stack>
+
+
+
+
+
+    <Text  fontWeight='bolder' textTransform='camelcase' mt={6} fontSize={{ lg: '2rem' ,md:'1.8rem',sm:'1.6rem'}} lineHeight="normal" color="rgb(51,51,51)">Description</Text>
+    <Text  textTransform='camelcase' py={10} fontSize={{ lg: '1.4rem' ,md:'1.3rem',sm:'1.2rem'}} color='#7e7e7e'>
+    2 planks are slightly rotten.Dimensions- 2.0x1.75x0.6 mHeadboard with wooden carvings
+    </Text>
+    <Box  w="50%" alignSelf={"center"}>
+    <Box my={1} alignSelf={"center"} h='150px' borderWidth='1px'/>
+   <Text textAlign={"right"} fontSize={{ lg: '1.1rem' ,md:'1rem',sm:'0.8rem'}}  color='rgb(207,207,207)'>Advertisement</Text>
+   </Box>
+
+
+    <Text  fontWeight='bolder'py={10} textTransform='camelcase' fontSize={{ lg: '2rem' ,md:'1.8rem',sm:'1.6rem'}} lineHeight="normal" color="rgb(51,51,51)">Posted By</Text>
+    <Flex align="center" mt={0}  width="100%"  background='rgb(250,250,250)'  p="3%"  >
+    <Box  alignItems={"center"}  display={"flex"}   >
+      <Image  width={{ lg:"5%",md:'5%',sm:"4%"}} src="phone.jpg"/>
+    <Text ml={4} textTransform='camelcase' fontSize={{ lg: '1.3rem' ,md:'1.3rem',sm:'1.2rem'}} color='#7e7e7e'>   Mobile Verified </Text>
+      </Box>
+      <Box  alignItems={"center"}  display={"flex"}   >
+      <Image  width={{ lg:"5%",md:'5%',sm:"4%"}} src="phone.jpg"/>
+    <Text ml={4} textTransform='camelcase' fontSize={{ lg: '1.3rem' ,md:'1.3rem',sm:'1.2rem'}} color='#7e7e7e'>   Mobile Verified </Text>
+      </Box>
+      <Box  alignItems={"center"} display={"flex"}   >
+      <Image  width={{ lg:"14%",md:'14%',sm:"12%"}}    src="email.jpg"/>
+    <Text ml={4}textTransform='camelcase' fontSize={{ lg: '1.3rem' ,md:'1.3rem',sm:'1.2rem'}} color='#7e7e7e'>   Email Verified </Text>
+      </Box>
+      <Button  variant='outline' textTransform='camelcase'  fontSize={{ lg: '1.3rem' ,md:'1.3rem',sm:'1rem'}} sx={{padding:{lg:"20px 40px",sm:"20px 40px",md:"18px 37px"}}}   size='lg' border="2px solid" color='#0485cb'>Chat Now</Button>
+
+</Flex>
+    
+
+<Text  fontWeight='bolder' py={10} textTransform='camelcase' fontSize={{ lg: '2rem' ,md:'1.8rem',sm:'1.6rem'}} lineHeight="normal" color="rgb(51,51,51)">Buyer Guidelines</Text>
+<Stack boxShadow='xs' p='6' rounded='md' bg='white'  fontSize={{ lg: '1.4rem' ,md:'1.2rem',sm:'1rem'}}   mt={0}  width="100%"   justify  ="space-between">
+{/* CheckCircleIcon */}
+<List  spacing={3}>
+  <ListItem>
+    <ListIcon as={MdCheckCircle} color='green.500' />
+    Be careful when paying offline
+  </ListItem>
+  <ListItem>
+    <ListIcon as={MdCheckCircle} color='green.500' />
+    Beware of ads with unrealistic prices, lookalikes or clone products
+      </ListItem>
+  <ListItem>
+    <ListIcon as={MdCheckCircle} color='green.500' />
+    Chat and ask questions to be clear on product details
+  </ListItem>
+  <ListItem>
+    <ListIcon as={MdCheckCircle} color='green.500' />
+    Do not deposit/transfer money to bank or any third party payment gateways without verifying the credentials
+  </ListItem>
+</List>
+</Stack>
+
+
+    </Stack>
+    </Box>
+    </Stack>
+
+
+
+
+    {/* <Text  fontWeight='bolder' textTransform='camelcase' mt={6} fontSize={{ lg: '2.4rem' ,md:'2rem',sm:'1.8rem'}} lineHeight="normal" color="rgb(51,51,51)"> Queen size but slightly wider solid teakwood bed</Text> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 {/* Left side Box */}
-
-
-  <Box mt={{ base: 4, md: 0 }} ml={{ md: 6 }}>
-   <Box>
-    <Text
-      fontWeight='bold'
-      textTransform='uppercase'
-      fontSize='lg'
-      letterSpacing='wide'
-      color='orange.400'
-    >
-      Marketing 
-    </Text>
-    </Box>
+  <Box pl={10} position={"fixed"} right={0} width={{ lg:"45%",md:'50%'}}>
+   <Stack spacing={'8%'} direction='row' flexWrap={"wrap"} >
+    <Text fontWeight='bold' textTransform='uppercase' fontSize='20'color='#feae3c'>HEAVILY USED </Text>
+    <UnorderedList>
+  <ListItem   fontWeight='bolder' textTransform='uppercase' fontSize='20' color='#798ba8'>BED SETS</ListItem>
+  </UnorderedList>
+  <UnorderedList>
+  <ListItem   fontWeight='bolder' textTransform='uppercase' fontSize='20' color='#798ba8'>SOLID WOOD (TEAK)</ListItem>
+  </UnorderedList>
+    {/* </Stack> */}
+    </Stack>
    
-    <Text mt={3}
-    fontWeight='bolder'
-    textTransform='camelcase'
-    fontSize={{ lg: '2.5rem' ,md:'2.2rem',sm:'1.8rem'}}  
-    // letterSpacing='wide'
-    lineHeight="normal">
-    Queen size but slightly wider solid teakwood bed
-    </Text>
-
-    <Text mt={2} fontSize={{ lg: '1.3rem' ,md:'1.2rem',sm:'1.1rem'}}     fontWeight='500' color='gray.500'>
-    Kottayam  | Posted 16 Days Ago
-    </Text>
-
-    <Text mt={2} fontSize={{ lg: '2.5rem' ,md:'2.3rem',sm:'2.1rem'}}   fontWeight='bolder' color='blue.500'>
-    ₹6,000
-    
-    </Text>
-    <Stack mt={4} spacing={'8%'} direction='row'>
-    <Button  textTransform='uppercase' fontSize={{ lg: '1.5rem' ,md:'1.3rem',sm:'1rem'}} sx={{padding:{lg:"35px 110px",md:"31px 90px",sm:"28px 80px"}}} style={{background:`linear-gradient(90deg,rgba(0,196,203,1) 0%, rgba(0,111,173,1) 100%, rgba(0,212,255,1) 0%)` }} size='lg'  colorScheme='blue'>Call</Button>
-
-    <Button  variant='outline' textTransform='uppercase' fontSize={{ lg: '1.5rem' ,md:'1.3rem',sm:'1rem'}} sx={{padding:{lg:"35px 110px",sm:"27px 80px",md:"30px 90px"}}}   size='lg'  colorScheme='blue'>chat</Button>
+    <Text  fontWeight='bolder' textTransform='camelcase' mt={6} fontSize={{ lg: '2.4rem' ,md:'2rem',sm:'1.8rem'}} lineHeight="normal" color="rgb(51,51,51)"> Queen size but slightly wider solid teakwood bed</Text>
+    <Text my={4} fontSize={{ lg: '1.2rem' ,md:'1.2rem',sm:'1.1rem'}}  color='rgb(136,136,136)'> Kottayam  <span style={{color:"rgb(176,176,176)"}}> | </span> Posted 16 Days Ago </Text>
+    <Text my={3} fontSize={{ lg: '2.5rem' ,md:'2.3rem',sm:'2.1rem'}}   fontWeight='bolder' color='rgb(0,131,202)'>₹6,000</Text>
+    <Stack mt={8} spacing={'8%'} direction='row'>
+    <Button   textTransform='uppercase' fontSize={{ lg: '1.5rem' ,md:'1.3rem',sm:'1rem'}} sx={{padding:{lg:"35px 110px",md:"31px 90px",sm:"28px 80px"}}} style={{background:`linear-gradient(90deg,rgba(0,196,203,1) 0%, rgba(0,111,173,1) 100%, rgba(0,212,255,1) 0%)` }} size='lg'  colorScheme='blue'>Call</Button>
+    <Button  variant='outline' textTransform='uppercase'  fontSize={{ lg: '1.5rem' ,md:'1.3rem',sm:'1rem'}} sx={{padding:{lg:"35px 110px",sm:"27px 80px",md:"30px 90px"}}}   size='lg' border="2px solid" color='#0485cb'>chat</Button>
 </Stack>
+{/* <Box  width={{  lg:"75%" ,md:"0%",sm:"70%"}} mt={4} style={{background:'rgb(241,252,253)'}}   borderColor='gray.200' > */}
+
+<Flex align="center" mt={5} px="10px" width={{  lg:"80%" ,md:"90%",sm:"65%"}}  background='rgb(241,252,253)'  py="3%" justify  ="space-between">
+<Box align="center"    >
+    <Image mb={2}  width={{ lg:"60%",md:'55%',sm:"50%"}} src="https://teja9.kuikr.com/core/clsfd/assets/ic-get-all-details-2x.png"/>
+    <Text fontSize={{ lg:"1rem",md:'0.9rem',sm:"0.8rem"}} color='rgb(120,197,218)'>   Get all details </Text>
+    </Box>
+    <Box align="center" >
+    <Image mb={2}   width={{ lg:"55%",md:'50%',sm:"45%"}} src="https://teja9.kuikr.com/core/clsfd/assets/ic-schedule-visit-bazaar-2x.png"/>
+    <Text fontSize={{ lg:"1rem",md:'0.9rem',sm:"0.8rem"}}  color='rgb(120,197,218)'>   Schedule a visit </Text>
+    </Box>
+    <Box align="center">
+    <Image mb={2}   width={{ lg:"55%",md:'50%',sm:"45%"}} src="https://teja9.kuikr.com/core/clsfd/assets/ic-negotiate-2x.png"/>
+    <Text  fontSize={{ lg:"1rem",md:'0.9rem',sm:"0.8rem"}}  color='rgb(120,197,218)'>   Negotiate price </Text>
+    </Box>    
+</Flex>
   </Box>
   </Box>
+  // {/* </Stack> */}
   )
 }
 
 
 export default SinglePage
+
+
+
+ {/* <Box p={4} flexWrap="wrap"  display={{ lg: 'flex',md:"flex" }}   sx={{width:{xs:"10%",sm:"358px",md:'320px'},boxShadow:"none",borderRadius:0}} > */}
+  {/* <Box position="absolute" left="0" width={{ lg:'flex' ,lg:"1200px",md:'800px'}} > */}
