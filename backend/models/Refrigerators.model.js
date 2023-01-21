@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
-const CarSchema = mongoose.Schema({
-  brand: {
+const RefrigeratorSchema = mongoose.Schema({
+  door_style: {
     type: String,
     required: true,
   },
@@ -8,15 +8,15 @@ const CarSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  fule_type: {
+  condition: {
     type: String,
     required: true,
   },
-  year_of_registration: {
+  defrosting_type: {
     type: Number,
     required: true,
   },
-  price: {
+  brand: {
     type: Number,
     required: true,
   },
@@ -26,9 +26,14 @@ const CarSchema = mongoose.Schema({
   },
   ad_description: {
     type: String,
+    required: false,
+  },
+  capacity: {
+    type: String,
     required: true,
   },
-  kms_driven: {
+
+  price: {
     type: Number,
     required: true,
   },
@@ -38,6 +43,6 @@ const CarSchema = mongoose.Schema({
   },
 });
 
-const Carsmodel = mongoose.model("cars", CarSchema);
+const Refrigeratorsmodel = mongoose.model("refrigerators", RefrigeratorSchema);
 
-module.exports = { Carsmodel };
+module.exports = { Refrigeratorsmodel };

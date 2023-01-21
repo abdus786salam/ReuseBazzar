@@ -3,6 +3,8 @@ const cors = require("cors");
 const { connected } = require("./config/db");
 const { registerRouter } = require("./routes/register.routes");
 const { bikeRouter } = require("./routes/bike.routes");
+const { converter } = require("./middlewares/Imageconverter");
+const fileupload = require("express-fileupload");
 require("dotenv").config();
 const app = express();
 app.use(
@@ -10,8 +12,14 @@ app.use(
     origin: "*",
   })
 );
+app.use(
+  fileupload({
+    useTempFiles: true,
+  })
+);
 app.use(express.json());
 app.use("/users", registerRouter);
+// app.use(converter);
 app.use("/bikes", bikeRouter);
 app.listen(process.env.port, async () => {
   try {

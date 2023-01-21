@@ -86,7 +86,7 @@ export const MostPopular = () => {
     <>
     
       <div className="product-Crousel">
-       <p style={{textAlign:"left",fontWeight:"bold",color:"black"}}> Most Popular Product</p> 
+       <p style={{textAlign:"left",fontWeight:"bold",color:"black",fontSize:"20px"}}> Most Popular Products</p> 
         <button onClick={btnpressprev} className="pre">
           <p>&lt;</p>
         </button>
@@ -94,7 +94,7 @@ export const MostPopular = () => {
           <p>&gt;</p>
         </button>
 
-        <div className="product-container">
+        <div className="product-container"  style={{backgroundColor:"white"}}>
           {data.map((e, i) => {
             
             return <Card key={i + 1} img={e.img} category={e.category} />;

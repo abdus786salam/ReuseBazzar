@@ -30,6 +30,7 @@ import MediaQuery from "react-responsive";
 export const Footer = () => {
   return (
     <Box
+      backgroundColor={"white"}
       maxW={"80%"}
       margin={"auto"}
       color={useColorModeValue("gray.700", "gray.200")}

@@ -6,7 +6,6 @@ const BikeSchema = mongoose.Schema({
   },
   city: {
     type: String,
-    required: true,
   },
   year: {
     type: Number,
@@ -19,6 +18,10 @@ const BikeSchema = mongoose.Schema({
   image: {
     data: Buffer,
     contentType: String,
+  },
+  ad_title: {
+    type: String,
+    required: false,
   },
 });
 
