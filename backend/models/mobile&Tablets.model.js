@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const CarSchema = mongoose.Schema({
+const MobileSchema = mongoose.Schema({
   brand: {
     type: String,
     required: true,
@@ -8,11 +8,11 @@ const CarSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  fule_type: {
+  Model: {
     type: String,
     required: true,
   },
-  year_of_registration: {
+  year_of_purchase: {
     type: Number,
     required: true,
   },
@@ -26,10 +26,10 @@ const CarSchema = mongoose.Schema({
   },
   ad_description: {
     type: String,
-    required: true,
+    required: false,
   },
-  kms_driven: {
-    type: Number,
+  physical_condition: {
+    type: String,
     required: true,
   },
   ad_title: {
@@ -38,6 +38,6 @@ const CarSchema = mongoose.Schema({
   },
 });
 
-const Carsmodel = mongoose.model("cars", CarSchema);
+const Mobilesmodel = mongoose.model("mobile", MobileSchema);
 
-module.exports = { Carsmodel };
+module.exports = { Mobilesmodel };
