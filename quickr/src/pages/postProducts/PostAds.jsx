@@ -3,24 +3,14 @@ import {
   Box,
   HStack,
   Image,
-  Spacer,
   Link,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  Menu,
-  Button,
-  Divider,
   VStack,
-  Heading,
   Text,
   Center,
-  Icon,
   Flex,
   SimpleGrid,
 } from "@chakra-ui/react";
 import { Link as ReactLink } from "react-router-dom";
-import { ChevronDownIcon } from "@chakra-ui/icons";
 import bikeIcon from "./icons/car1.png";
 import smartPhone from "./icons/smartphones.png";
 import desktop from "./icons/desktop.png";
@@ -33,6 +23,7 @@ import homeWork from "./icons/work-from-home.png";
 import partTime from "./icons/part-time-job.png";
 import workAbroad from "./icons/work-abroad.png";
 import { useDispatch, useSelector } from "react-redux";
+import FormHeaders from "../../components/formComponents/FormHeaders";
 
 const PostAds = () => {
   const dispatch = useDispatch();
@@ -40,56 +31,7 @@ const PostAds = () => {
 
   return (
     <Box bg="#fafafa" w="100%" px={{ lg: 200 }} pt="5" pb="10">
-      <HStack>
-        <Box>
-          <Link as={ReactLink} to="/">
-            <Image
-              src="https://user-images.githubusercontent.com/101567617/213376453-2316aeb0-5717-44a8-899e-f51ec9bf8adc.png"
-              w="200px"
-            ></Image>
-          </Link>
-        </Box>
-        <Spacer />
-        <HStack>
-          <Link
-            _hover={{ color: "blue", textDecoration: "underline" }}
-            as={ReactLink}
-            to="/login"
-          >
-            Sign in/Register
-          </Link>
-        </HStack>
-        <span>|</span>
-        <HStack>
-          <Link
-            _hover={{ color: "blue", textDecoration: "underline" }}
-            as={ReactLink}
-            to="/help"
-          >
-            Help
-          </Link>
-        </HStack>
-        <span>|</span>
-        <HStack>
-          <Menu>
-            <MenuButton
-              _hover={{ color: "blue", textDecoration: "underline" }}
-              as={Link}
-              rightIcon={<ChevronDownIcon />}
-            >
-              Language
-            </MenuButton>
-            <MenuList>
-              <MenuItem>English</MenuItem>
-              <MenuItem>हिंदी</MenuItem>
-              <MenuItem>اردو</MenuItem>
-              <MenuItem>മലയാളം</MenuItem>
-              <MenuItem>मराठी</MenuItem>
-              <MenuItem>ગુજરાતી</MenuItem>
-            </MenuList>
-          </Menu>
-        </HStack>
-      </HStack>
+      <FormHeaders />
       <Flex border="1px solid gray">
         <VStack borderRight="1px solid gray" flex="0.3" spacing="0">
           <Center
@@ -197,7 +139,7 @@ const PostAds = () => {
                 color="blue"
                 _hover={{ textDecoration: "underline" }}
                 as={ReactLink}
-                to="#"
+                to="/postads/bike"
               >
                 Bikes & Scooters
               </Link>
