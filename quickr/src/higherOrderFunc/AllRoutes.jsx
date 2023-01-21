@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { Home } from '../pages/postProducts/Home'
+
 import PostAds from '../pages/postProducts/PostAds'
 
 
@@ -9,6 +9,7 @@ const AllRoutes = () => {
     <Routes>
       <Route path="/" element={<Home/>}/>
         <Route path='/postads' element={<PostAds/>}></Route>
+        <Route path='/postads/bike' element={<FormBikeAndScooter/>}></Route>
     </Routes>
   )
 }

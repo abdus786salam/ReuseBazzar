@@ -8,13 +8,20 @@ import { RiArrowDropDownLine } from "react-icons/ri"
 import {ChevronDownIcon, Search2Icon} from "@chakra-ui/icons"
 import logo from "../../Assets/finallogo.jpeg"
 import { Subnavbar } from "./subnavbar"
+import { LoginModal } from "./loginmodal"
+import { result } from "lodash"
+import { useState } from "react"
 function Navbar(){
-
+    const [result,setResult]=useState([])
     const city=["Ahmedabad","Bangalore","Chandigarh","Chennai","Coimbatore","Delhi","Hydrabad","Kochi","Kolkata","Mumbai","Pune"]
 
+    const changehandler=(e)=>{
+        setResult(e.target.value)
+        console.log(e.target.value)
+    }
 return(
     <>
-    <Flex  w="85%" m="auto" h="70px" alignItems="center" >
+    <Flex  w="85%" m="auto" h="70px" alignItems="center">
         <Box  bg="red" mr="5%" w="40%">
             <Image h="70px" w="100%" src={logo}></Image>
         </Box>
@@ -47,7 +54,15 @@ return(
         <Flex mr="8%" w="800px">
             {/* <Input type="text" placeholder="Search" /> */}
             <InputGroup >
-                <Input type='text' placeholder='Search' border="1px solid #008BCF" />
+                <Input type='text'  placeholder='Search'onChange={(e)=>changehandler(e)} border="1px solid #008BCF" />
+                <Box>
+                {result.map((el)=>(
+                    <Text>
+                      
+                    </Text>
+                ))}   
+                </Box>            
+
                 <InputRightElement
                     pointerEvents='none'
                     bg="#008BCF"
@@ -62,7 +77,8 @@ return(
         </Flex>
         <Flex alignItems="center" mr="3%" gap="7px">
             <BiUserCircle size="1.5rem"/>
-            <Text fontSize="lg">Login/Register</Text>
+            <LoginModal/>
+            {/* <Text fontSize="lg">Login/Register</Text> */}
         </Flex>
        
         <Box>
@@ -70,6 +86,9 @@ return(
         </Box>
     </Flex>
     <Subnavbar/>
+    <Box h="2500px" bg="red">
+
+    </Box>
     </>
     
 )
