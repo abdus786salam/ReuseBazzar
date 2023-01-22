@@ -3,6 +3,8 @@ import { useState } from "react"
 import {useNavigate} from "react-router-dom"
 import {FaFacebookSquare} from "react-icons/fa"
 import {FcGoogle} from "react-icons/fc"
+import { BiUserCircle } from "react-icons/bi"
+
 // import { Signupform } from "./Signupform"
 
 const signupdata={
@@ -30,12 +32,12 @@ function LoginModal(){
      const [finallogindetail,setFinallogindetail]=useState(finallogindata)
 
     const getlogindata=()=>{
-      fetch("http://localhost:8080/users")
+      fetch("https://calm-pink-python-suit.cyclic.app/users")
       .then(res=>res.json())
       .then(res=>setLogindata(res))
     }
     const registeruser=()=>{
-      fetch("http://localhost:8080/users/register",{
+      fetch("https://calm-pink-python-suit.cyclic.app/users/register",{
         method:"POST",
         body:JSON.stringify(signupdetail),
         headers:{
@@ -51,7 +53,7 @@ function LoginModal(){
       })
     }
      const checklogindata=()=>{
-      fetch("http://localhost:8080/users/login",{
+      fetch("https://calm-pink-python-suit.cyclic.app/users/login",{
         method:"POST",
         body:JSON.stringify(finallogindetail),
         headers:{
@@ -114,7 +116,11 @@ function LoginModal(){
 
 return(
           <>
-            <Button onClick={modal1.onOpen}>Login/Register</Button>
+            
+            <Button onClick={modal1.onOpen} bg="none">
+                 <BiUserCircle size="1.5rem"/>  
+              Login/Register
+            </Button>
              {/* modal1 */}
             <Modal size="xl"  closeOnOverlayClick={false} isOpen={modal1.isOpen} onClose={modal1.onClose}>
               <ModalOverlay />

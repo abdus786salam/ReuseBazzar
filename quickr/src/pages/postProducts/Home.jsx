@@ -9,10 +9,12 @@ import { Footer } from "../../Components/HomePage/footer";
 import LifeStyle from "../../Components/HomePage/HomeandLifeStyle";
 import Mobile from "../../Components/HomePage/MobileTablets";
 import { MostPopular } from "../../Components/HomePage/MostPopularProduct";
+import { Navbar } from "../../Components/Navbar/navbar";
 
 export const Home = () => {
   return (
     <>
+      <Navbar/>
       <div style={{backgroundColor:"#F3F3F3"}}>
         <MostPopular />
         <BuySell />

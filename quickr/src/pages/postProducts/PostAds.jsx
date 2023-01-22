@@ -23,7 +23,7 @@ import homeWork from "./icons/work-from-home.png";
 import partTime from "./icons/part-time-job.png";
 import workAbroad from "./icons/work-abroad.png";
 import { useDispatch, useSelector } from "react-redux";
-import FormHeaders from "../../components/formComponents/FormHeaders";
+import FormHeaders from "../../Components/formComponents/FormHeaders"
 
 const PostAds = () => {
   const dispatch = useDispatch();
