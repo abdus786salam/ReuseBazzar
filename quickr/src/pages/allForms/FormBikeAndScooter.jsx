@@ -29,8 +29,8 @@ const FormBikeAndScooter = () => {
   });
 
   const handleChange = (e) => {
-    const { name, value, files } = e.target;
-   let newVal=name==="image"?files:value
+    const { name, value,files } = e.target;
+   let newVal=name==="image"?files[0]:value
    console.log("newVal",newVal)
     setFormData({ ...formData, [name]: newVal });
   };
@@ -40,7 +40,7 @@ const FormBikeAndScooter = () => {
     setData([...data,formData])
   }
 
-  console.log(formData);
+  console.log(formData,data);
   return (
     <Box bg="#fafafa" w="100%" px={{ lg: 100 }} pt="5" pb="10">
       <FormHeaders />

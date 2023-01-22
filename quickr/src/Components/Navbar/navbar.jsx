@@ -1,5 +1,7 @@
+
 import  "./navbar.css"
 import {Box,Flex, Heading, Image, Input,Icon, Text, Button, InputGroup, InputRightElement, Menu, MenuButton, MenuList, MenuGroup, MenuItem, MenuDivider, VStack} from "@chakra-ui/react"
+
 import { GoLocation } from "react-icons/go"
 import { FiSearch } from "react-icons/fi"
 import { FaUserAlt } from "react-icons/fa"
@@ -14,8 +16,12 @@ import { Subnavbar } from "./subnavbar"
 import { LoginModal } from "./loginmodal"
 import { result } from "lodash"
 import { useState } from "react"
+
 import { useEffect } from "react"
+
 import { Link } from "react-router-dom"
+
+
 function Navbar(){
     const [result,setResult]=useState([])
     const [tokenvalue,setTokenvalue]=useState(false)
@@ -161,9 +167,11 @@ return(
         
        
         <Box>
+
             <Link to="/postads">
             <Button bg="yellow">Post Free Ad</Button>
             </Link>
+
         </Box>
     </Flex>
     <Flex display={{ base: "flex", md: "none", lg: "none" }} justifyContent="space-between" mr="60px" alignItems="center" position="sticky" top="0px">
@@ -208,6 +216,7 @@ return(
         
     </Flex>
     <Subnavbar/>
+
     </>
     
 )
