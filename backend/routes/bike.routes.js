@@ -30,7 +30,7 @@ bikeRouter.post("/post", converter, async (req, res) => {
     res.send(error);
   }
 });
-bikeRouter.put("/update/:id", converter, async (req, res) => {
+bikeRouter.patch("/update/:id", converter, async (req, res) => {
   const paylode = req.body;
   const update = req.params.id;
   const bike = await Bikemodel.findOne({ _id: update });

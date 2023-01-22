@@ -6,7 +6,7 @@ const RefrigeratorSchema = mongoose.Schema({
   },
   city: {
     type: String,
-    required: true,
+    // required: true,
   },
   condition: {
     type: String,

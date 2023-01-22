@@ -8,6 +8,7 @@ const fileupload = require("express-fileupload");
 const { CarRouter } = require("./routes/car.routes");
 const { LaptopRouter } = require("./routes/laptop.routes");
 const { MobileRouter } = require("./routes/mobile.routes");
+const { allRouter } = require("./routes/alldata.routes");
 require("dotenv").config();
 const app = express();
 app.use(
@@ -22,7 +23,8 @@ app.use(
 );
 app.use(express.json());
 app.use("/users", registerRouter);
-// app.use(authenticate);
+app.use(authenticate);
+app.use("/", allRouter);
 app.use("/bikes", bikeRouter);
 app.use("/cars", CarRouter);
 app.use("/laptops", LaptopRouter);

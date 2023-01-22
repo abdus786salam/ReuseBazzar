@@ -2,9 +2,10 @@ const express = require("express");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { RegisterModel } = require("../models/users.register");
+const { converter } = require("../middlewares/Imageconverter");
 require("dotenv").config();
 const registerRouter = express.Router();
-registerRouter.post("/register", async (req, res) => {
+registerRouter.post("/register", converter, async (req, res) => {
   const { email, password, name, mobile } = req.body;
   const userPresent = await RegisterModel.findOne({ email });
   if (userPresent?.email) {
@@ -17,6 +18,7 @@ registerRouter.post("/register", async (req, res) => {
           password: hash,
           name,
           mobile,
+          avatar,
         });
         await newuser.save();
         res.send({ msg: "Sign up Sucessful" });
