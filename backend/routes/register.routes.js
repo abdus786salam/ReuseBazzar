@@ -4,6 +4,17 @@ const jwt = require("jsonwebtoken");
 const { RegisterModel } = require("../models/users.register");
 require("dotenv").config();
 const registerRouter = express.Router();
+
+registerRouter.get("/",async(req,res)=>{
+  try{
+     const userdata=await RegisterModel.find()
+     res.send(userdata)
+  }
+  catch(err){
+      res.send({ msg: "Somethinf went wrong" });
+      console.log(err)
+  }
+})
 registerRouter.post("/register", async (req, res) => {
   const { email, password, name, mobile } = req.body;
   const userPresent = await RegisterModel.findOne({ email });
