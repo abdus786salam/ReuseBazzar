@@ -20,8 +20,6 @@ const SinglePage = () => {
   
  
   return(
-    // <Stack >
-    // <Box pos="fixed" w="100%" zIndex={2}></Box>
     <Box  mt={14}   display={{ lg: 'flex',md:"flex" }} >
     <Stack  width={{ lg:"55%",md:'70%'}}>
      {/* <Box gap={2} style={{cursor:"pointer"}}> */}
