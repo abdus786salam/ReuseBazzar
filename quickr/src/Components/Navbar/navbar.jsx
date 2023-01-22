@@ -1,5 +1,5 @@
 
-import {Box,Flex, Heading, Image, Input,Icon, Text, Button, InputGroup, InputRightElement, Menu, MenuButton, MenuList, MenuGroup, MenuItem, MenuDivider} from "@chakra-ui/react"
+import {Box,Flex, Heading, Image, Input,Icon, Text, Button, InputGroup, InputRightElement, Menu, MenuButton, MenuList, MenuGroup, MenuItem, MenuDivider, Link} from "@chakra-ui/react"
 import { GoLocation } from "react-icons/go"
 import { FiSearch } from "react-icons/fi"
 import { FaUserAlt } from "react-icons/fa"
@@ -13,7 +13,11 @@ import { Subnavbar } from "./subnavbar"
 import { LoginModal } from "./loginmodal"
 import { result } from "lodash"
 import { useState } from "react"
+<<<<<<< HEAD
+import { Link as ReactLink } from 'react-router-dom'
+=======
 import { useEffect } from "react"
+>>>>>>> b34f46eed5db4fe29ca23da3c168ca2350e69f36
 function Navbar(){
     const [result,setResult]=useState([])
     const [tokenvalue,setTokenvalue]=useState(false)
@@ -100,7 +104,7 @@ return(
         
        
         <Box>
-            <Button bg="yellow">Post Free Ad</Button>
+           <Link as={ReactLink} to='/postads'><Button bg="yellow">Post Free Ad</Button></Link> 
         </Box>
     </Flex>
     <Flex display={{ base: "flex", md: "none", lg: "none" }} justifyContent="space-between" mr="60px" alignItems="center" position="sticky" top="0px">
@@ -145,6 +149,12 @@ return(
         
     </Flex>
     <Subnavbar/>
+<<<<<<< HEAD
+    {/* <Box h="2500px" bg="red">
+
+    </Box> */}
+=======
+>>>>>>> b34f46eed5db4fe29ca23da3c168ca2350e69f36
     </>
     
 )
