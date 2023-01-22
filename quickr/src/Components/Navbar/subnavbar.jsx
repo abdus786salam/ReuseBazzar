@@ -7,7 +7,7 @@ function Subnavbar(){
 
  return (
     <>
-     <Flex h="40px" bg="skyblue" textAlign="center" justifyContent="center">
+     <Flex h="40px" bg="skyblue" textAlign="center" justifyContent="center" display={{base:"none",md:"flex",lg:"flex"}}>
         <Menu >
             <MenuButton bg="none" _hover={{bg:"none"}} _expanded={{ bg: 'none' }} as={Button} rightIcon={<ChevronDownIcon />}>
                 MOBILES
