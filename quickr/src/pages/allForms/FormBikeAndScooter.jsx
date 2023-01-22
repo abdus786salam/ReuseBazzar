@@ -25,7 +25,7 @@ const FormBikeAndScooter = () => {
     ad_title: "",
     price: "",
     mobile: "",
-    image: null,
+    image:"",
   });
 
   const handleChange = (e) => {

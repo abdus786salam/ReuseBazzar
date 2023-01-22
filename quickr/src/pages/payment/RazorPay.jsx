@@ -1,7 +1,6 @@
 import axios from "axios";
 import { Button ,useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import image_logo from './V.png'
 
 function RazorPay({details,totalprice}) {
   const toast = useToast();
