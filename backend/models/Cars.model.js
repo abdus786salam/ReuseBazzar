@@ -2,35 +2,46 @@ const mongoose = require("mongoose");
 const CarSchema = mongoose.Schema({
   brand: {
     type: String,
-    required: true,
+    // required: true,
+  },
+  model: {
+    type: String,
+    // required: true,
   },
   city: {
     type: String,
-    required: true,
+    // required: true,
   },
   fule_type: {
     type: String,
-    required: true,
+    // required: true,
   },
   year_of_registration: {
     type: Number,
-    required: true,
+    // required: true,
   },
   price: {
     type: Number,
-    required: true,
+    // required: true,
   },
   image: {
-    data: Buffer,
-    contentType: String,
+    type: String,
   },
   ad_description: {
     type: String,
-    required: true,
+    // required: true,
+  },
+  condition: {
+    type: String,
+    // required: true,
   },
   kms_driven: {
-    type: Number,
-    required: true,
+    type: String,
+    // required: true,
+  },
+  ad_title: {
+    type: String,
+    // required: false,
   },
 });
 
