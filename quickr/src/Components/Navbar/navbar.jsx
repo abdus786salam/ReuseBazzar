@@ -1,5 +1,5 @@
 
-import {Box,Flex, Heading, Image, Input,Icon, Text, Button, InputGroup, InputRightElement, Menu, MenuButton, MenuList, MenuGroup, MenuItem, MenuDivider} from "@chakra-ui/react"
+import {Box,Flex, Heading, Image, Input,Icon, Text, Button, InputGroup, InputRightElement, Menu, MenuButton, MenuList, MenuGroup, MenuItem, MenuDivider, Link} from "@chakra-ui/react"
 import { GoLocation } from "react-icons/go"
 import { FiSearch } from "react-icons/fi"
 import { BiUserCircle } from "react-icons/bi"
@@ -11,6 +11,7 @@ import { Subnavbar } from "./subnavbar"
 import { LoginModal } from "./loginmodal"
 import { result } from "lodash"
 import { useState } from "react"
+import { Link as ReactLink } from 'react-router-dom'
 function Navbar(){
     const [result,setResult]=useState([])
     const city=["Ahmedabad","Bangalore","Chandigarh","Chennai","Coimbatore","Delhi","Hydrabad","Kochi","Kolkata","Mumbai","Pune"]
@@ -82,13 +83,13 @@ return(
         </Flex>
        
         <Box>
-            <Button bg="yellow">Post Free Ad</Button>
+           <Link as={ReactLink} to='/postads'><Button bg="yellow">Post Free Ad</Button></Link> 
         </Box>
     </Flex>
     <Subnavbar/>
-    <Box h="2500px" bg="red">
+    {/* <Box h="2500px" bg="red">
 
-    </Box>
+    </Box> */}
     </>
     
 )
