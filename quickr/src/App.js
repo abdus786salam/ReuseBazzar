@@ -1,10 +1,20 @@
-import './App.css';
+
+
+
+// import { Navbar } from './components/Navbar/navbar';
+
+
+import { Navbar } from './Components/Navbar/navbar';
 import AllRoutes from './higherOrderFunc/AllRoutes';
+
 function App() {
   return (
-    <>
-      <AllRoutes/>
-    </>
+    <div>
+      {/* <Navbar/> */}
+      <AllRoutes />
+      
+     
+    </div>
   );
 }
 
