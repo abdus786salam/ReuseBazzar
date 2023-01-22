@@ -38,7 +38,7 @@ registerRouter.post("/login", async (req, res) => {
             { userId: loginuser[0]._id },
             process.env.token
           );
-          res.send({ msg: "Login Sucessfully", Token: token });
+          res.send({ msg: "Login Sucessfully", token: token });
         } else {
           res.send({ msg: "Something went Wrong" });
         }
@@ -49,5 +49,12 @@ registerRouter.post("/login", async (req, res) => {
   } catch (error) {
     res.send({ msg: "Cridintial not match" });
   }
+});
+registerRouter.get("/logout", (req, res) => {
+  //clear the token from the user
+  req.session.token = null;
+  //clear the user from the req object
+  req.session.user = null;
+  res.send({ msg: "Logged out successfully" });
 });
 module.exports = { registerRouter };

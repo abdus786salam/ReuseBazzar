@@ -1,41 +1,40 @@
 const mongoose = require("mongoose");
-const RefrigeratorSchema = mongoose.Schema({
+const LaptopSchema = mongoose.Schema({
   Product_type: {
     type: String,
-    required: true,
+    // required: true,
   },
   city: {
     type: String,
-    required: true,
+    // required: true,
   },
   condition: {
     type: String,
-    required: true,
+    // required: true,
   },
 
   brand: {
-    type: Number,
-    required: true,
+    type: String,
+    // required: true,
   },
   image: {
-    data: Buffer,
-    contentType: String,
+    type: String,
   },
   ad_description: {
     type: String,
-    required: false,
+    // required: false,
   },
   ad_title: {
     type: String,
-    required: false,
+    // required: false,
   },
 
   price: {
     type: Number,
-    required: true,
+    // required: true,
   },
 });
 
-const Refrigeratorsmodel = mongoose.model("refrigerators", RefrigeratorSchema);
+const Laptopmodel = mongoose.model("laptop", LaptopSchema);
 
-module.exports = { Refrigeratorsmodel };
+module.exports = { Laptopmodel };

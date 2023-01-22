@@ -10,7 +10,7 @@ const MobileSchema = mongoose.Schema({
   },
   Model: {
     type: String,
-    required: true,
+    // required: true,
   },
   year_of_purchase: {
     type: Number,
@@ -21,8 +21,7 @@ const MobileSchema = mongoose.Schema({
     required: true,
   },
   image: {
-    data: Buffer,
-    contentType: String,
+    type: String,
   },
   ad_description: {
     type: String,

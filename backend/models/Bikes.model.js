@@ -6,6 +6,7 @@ const BikeSchema = mongoose.Schema({
   },
   city: {
     type: String,
+    required: true,
   },
   year: {
     type: Number,
@@ -15,9 +16,16 @@ const BikeSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
+  model: {
+    type: String,
+    required: true,
+  },
+  kms_driven: {
+    type: String,
+    required: true,
+  },
   image: {
-    data: Buffer,
-    contentType: String,
+    type: String,
   },
   ad_title: {
     type: String,
