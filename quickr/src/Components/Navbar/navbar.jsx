@@ -24,6 +24,7 @@ import { Link } from "react-router-dom"
 
 function Navbar(){
     const [result,setResult]=useState([])
+    
     const [tokenvalue,setTokenvalue]=useState(false)
     const [searchText, setSearchText] = useState("");
     const city=["Ahmedabad","Bangalore","Chandigarh","Chennai","Coimbatore","Delhi","Hydrabad","Kochi","Kolkata","Mumbai","Pune"]
@@ -161,7 +162,7 @@ return(
         </Flex>
         // <FaUserAlt size="100px" mr="10px"/>
         :<Flex alignItems="center" mr="3%" gap="7px">
-            <LoginModal/>
+            <LoginModal tokenvalue={tokenvalue}/>
             {/* <Text fontSize="lg">Login/Register</Text> */}
         </Flex>}
         

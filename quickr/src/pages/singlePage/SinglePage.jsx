@@ -2,12 +2,15 @@
 import Styles from "./single.module.css"
 import Styled from "styled-components"
 import { Box, Button, Flex,Image, Img, List,  ListIcon,  ListItem,  SimpleGrid,  Stack, Table,  Td, Text, Tr, UnorderedList } from '@chakra-ui/react'
-import React, { useState } from 'react'
-import Fade from "react-reveal/Fade";
+import React, { useEffect, useId, useState } from 'react'
+// import Fade from "react-reveal/Fade";
 import { MdCheckCircle } from 'react-icons/md'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import Form, { ContactForm } from './Form';
-import 'react-slideshow-image/dist/styles.css'
+import { useDispatch, useSelector } from "react-redux"
+import { getProducts } from "../../redux/category/action"
+import { Navbar } from "../../Components/Navbar/navbar"
+// import 'react-slideshow-image/dist/styles.css'
 const slideImages = ['https://teja9.kuikr.com/i4/20230121/64-GB--battery-health-100--VB201705171774173-ak_LWBP2008207890-1674318470.webp','https://bit.ly/2jYM25F'
 
 ,'https://teja9.kuikr.com/i4/20230121/64-GB--battery-health-100--VB201705171774173-ak_LWBP2008207890-1674318470.webp','https://bit.ly/2jYM25F'
@@ -16,18 +19,52 @@ const SinglePage = () => {
   const [isAuth,setIsAuth]  = useState(false);
   const [val,setVal] = useState("")
   let [url,setUrl] = useState(slideImages[0])
+  // const navigate=useNavigate()
+  const {param}=useParams()
+  console.log(param)
+  const {id}=useParams()
+  console.log(id)
+//   const [sliderValue, setSliderValue] = useState(6);
+ 
+const cat_data = useSelector((store) => store.category.Products);
+const dispatch = useDispatch();
 
+useEffect(() => {
+    dispatch(getProducts(param));
+  
+},[cat_data.length, dispatch])
+   console.log(cat_data)
+
+
+   const data=cat_data.find(item=>item._id==id)
+   console.log(data)
+  const carthandler=()=>{
+     fetch("https://vercel-unit-6-project.vercel.app/cart",{
+      method:"POST",
+      body:JSON.stringify(data),
+      headers:{
+        "Content-Type":"application/json"
+      }
+     })
+     .then(res=>res.json())
+    //  .then(res=>alert("Product is added to Cart"))
+     alert("Product is added to cart")
+    //  .then(res=>setCart_Data(res))
+  }
   
  
   return(
     // <Stack >
     // <Box pos="fixed" w="100%" zIndex={2}></Box>
+    <>
+    <Navbar/>
+
     <Box  mt={14}   display={{ lg: 'flex',md:"flex" }} >
     <Stack  width={{ lg:"55%",md:'70%'}}>
      {/* <Box gap={2} style={{cursor:"pointer"}}> */}
      <Stack p={4}>
      <Box   height={{lg:"350px",md:"350px",sm:"300px"}} gap={2} >
-    <Image src={url}
+    <Image src={data.image}
       alt='Sorry, Img crashed'
       width='100%'
       height={"100%"}
@@ -37,11 +74,11 @@ const SinglePage = () => {
     </Box>
     <Box display={"flex"}  height={{lg:"200px",md:"350px",sm:"300px"}} overflowY="hidden" overflowX="auto"  gap={2}>
     {/* <SimpleGrid minChildWidth='120px' direction="row" display={"flex"} minChildHeight='120px'  spacing={2}> */}
-    <Gal >
+    {/* <Gal >
           {slideImages.map((item)=>(
              <Img   style={{  width: "100%",  height: "100%", objectFit: "cover"}} onClick={()=>setUrl(item)} src={item}  alt="Image 1"/>
   ))}
-  </Gal>
+  </Gal> */}
     </Box>
      </Stack>
 
@@ -207,11 +244,12 @@ const SinglePage = () => {
     <Text my={4} fontSize={{ lg: '1.2rem' ,md:'1.2rem',sm:'1.1rem'}}  color='rgb(136,136,136)'> Kottayam  <span style={{color:"rgb(176,176,176)"}}> | </span> Posted 16 Days Ago </Text>
     <Text my={3} fontSize={{ lg: '2.5rem' ,md:'2.3rem',sm:'2.1rem'}}   fontWeight='bolder' color='rgb(0,131,202)'>₹6,000</Text>
     <Stack mt={8} spacing={'8%'} direction='row'>
-    <Button   textTransform='uppercase'  onClick={() => (!isAuth ?  setIsAuth(true)  : setIsAuth(false),setVal("Call"))} fontSize={{ lg: '1.5rem' ,md:'1.3rem',sm:'1rem'}} sx={{padding:{lg:"35px 110px",md:"31px 90px",sm:"28px 80px"}}} style={{background:`linear-gradient(90deg,rgba(0,196,203,1) 0%, rgba(0,111,173,1) 100%, rgba(0,212,255,1) 0%)` }} size='lg'   colorScheme='blue'>Call</Button>
+      <Button fontSize={{ lg: '1.5rem' ,md:'1.3rem',sm:'1rem'}} sx={{padding:{lg:"35px 110px",md:"31px 90px",sm:"28px 80px"}}} style={{background:`linear-gradient(90deg,rgba(0,196,203,1) 0%, rgba(0,111,173,1) 100%, rgba(0,212,255,1) 0%)` }} size='lg'   colorScheme='blue' onClick={carthandler}>Add to Cart</Button>
+    {/* <Button   textTransform='uppercase'  onClick={() => (!isAuth ?  setIsAuth(true)  : setIsAuth(false),setVal("Call"))} fontSize={{ lg: '1.5rem' ,md:'1.3rem',sm:'1rem'}} sx={{padding:{lg:"35px 110px",md:"31px 90px",sm:"28px 80px"}}} style={{background:`linear-gradient(90deg,rgba(0,196,203,1) 0%, rgba(0,111,173,1) 100%, rgba(0,212,255,1) 0%)` }} size='lg'   colorScheme='blue'>Add to Cart</Button> */}
     <Button  variant='outline' textTransform='uppercase' onClick={() => (!isAuth ?  setIsAuth(true)  : setIsAuth(false),setVal("Chat"))} fontSize={{ lg: '1.5rem' ,md:'1.3rem',sm:'1rem'}} sx={{padding:{lg:"35px 110px",sm:"27px 80px",md:"30px 90px"}}}   size='lg' border="2px solid" color='#0485cb'>chat</Button>
-   <Fade Bottom>
+   {/* <Fade Bottom> */}
     {!isAuth?  "": (<Form value={val} />)}
-    </Fade>
+    {/* </Fade> */}
 </Stack>
 {/* <Box  width={{  lg:"75%" ,md:"0%",sm:"70%"}} mt={4} style={{background:'rgb(241,252,253)'}}   borderColor='gray.200' > */}
 
@@ -231,6 +269,7 @@ const SinglePage = () => {
 </Flex>
   </Box>
   </Box>
+  </>
   // {/* </Stack> */}
   )
 }

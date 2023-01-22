@@ -1,9 +1,9 @@
 import axios from "axios";
 import { Button ,useToast } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
-import image_logo from './V.png'
+// import image_logo from ''
 
-function RazorPay({details,totalprice}) {
+function RazorPay({totalprice}) {
   const toast = useToast();
   const navigate = useNavigate();
   function loadScript(src) {
@@ -92,7 +92,7 @@ return (
           _hover={{ bgColor: "#ff385a" }}
           color={"white"}
           bgColor={"#ff385a"}  onClick={displayRazorpay}
-          disabled={ details.f_name==="" ||details.address1==="" || details.pin_code==="" ||details.city==="" || details.email==="" || details.mobile===""}
+        //   disabled={ details.f_name==="" ||details.address1==="" || details.pin_code==="" ||details.city==="" || details.email==="" || details.mobile===""}
           >
               Checkout
           </Button>

@@ -8,6 +8,9 @@ import { ChevronDownIcon, AddIcon } from "@chakra-ui/icons";
 // import { cartData, takeMeToCart } from "../Redux/action";
 import { wrapHandler } from "framer-motion";
 import axios from "axios";
+import RazorPay from "../../pages/payment/RazorPay";
+import { Navbar } from "../Navbar/navbar";
+
 
 const Cartdata = () => {
 //   const cart_Data = useSelector((state) => state.isAuth.cart);
@@ -25,20 +28,33 @@ const Cartdata = () => {
    }
   var bag = 0;
   for (var i = 0; i < cart_Data.length; i++) {
-    console.log(cart_Data[i].salePrice);
-    bag = bag + cart_Data[i].salePrice * cart_Data[i].qty;
+    console.log(cart_Data[i].price);
+    bag = bag + cart_Data[i].price * 1;
     //  count++ ;
     console.log(bag, "bag");
   }
 
   if (bag > 500) {
-    var discountedPrice = bag - 250;
+    var discountedPrice = bag - 2500;
     localStorage.setItem("Price", JSON.stringify(bag));
     localStorage.setItem("DiscountPrice", JSON.stringify(discountedPrice));
   } else {
     discountedPrice = bag;
   }
-
+  const handleDelete = (id) => {
+    axios
+      .delete(`https://vercel-unit-6-project.vercel.app/cart/${id}`)
+      .then((res) => {
+        alert("Product is deleted")
+        getcartdata()
+        // console.log(res);
+        // dispatch(cartData());
+      })
+      .catch((e) => {
+        console.log(e);
+        getcartdata()
+      });
+  };
   useEffect(() => {
     getcartdata()
   }, []);
@@ -67,20 +83,10 @@ const Cartdata = () => {
 //       });
 //   };
 
-//   const handleDelete = (el) => {
-//     axios
-//       .delete(`https://netmeds-server-data.herokuapp.com/api/cart/${el.id}`)
-//       .then((res) => {
-//         // console.log(res);
-//         dispatch(cartData());
-//       })
-//       .catch((e) => {
-//         console.log(e);
-//       });
-//   };
+  
   return (
     <>
-      {/* <Navbar /> */}
+      <Navbar />
       <Box height={"auto"} bg={"#F3F7FB"}>
         <Box flexWrap="wrap" p={5} width={"80%"} m={"auto"} height={"auto"}>
           <Text>Order Summary</Text>
@@ -92,8 +98,8 @@ const Cartdata = () => {
             </Text>
             {console.log(cart_Data, "vvv")}
             {cart_Data.map((el) => (
-              <Box
-                key={el.id}
+              <Box 
+                key={el._id}
                 fontSize={"sm"}
                 display={"flex"}
                 height={190}
@@ -101,19 +107,14 @@ const Cartdata = () => {
                 borderBottom={"1px solid grey"}
                 p={3}
               >
-                <Box>
-                  <Image height={42} mr={10} src={el.imageUrl} alt="" />
+                <Box w="30%">
+                  <Image height="80%" mr={10} src={el.image} alt="" />
                 </Box>
                 <Box>
                   <Text fontSize={"md"} fontWeight={500}>
-                    {el.title}
+                    {el.ad_title}
                   </Text>
-                  <Text fontSize={"small"} color={"green"}>
-                    Only 6 Left In Stock
-                  </Text>
-                  <Text fontSize={"small"} as={"i"}>
-                    Mfr:{el.seller}
-                  </Text>
+                  
                   <Box display={"flex"} gap={80}>
                     <Text
                       fontSize={"md"}
@@ -121,31 +122,17 @@ const Cartdata = () => {
                       fontWeight={500}
                       pt={2}
                     >
-                      RS.{Number(el.salePrice) * el.qty}.00
+                      RS.{el.price}
                     </Text>
-                    <Select
-                      height={8}
-                      mb={6}
-                      width={40}
-                      onChange={(e) => handleSelect(e.target.value)}
-                    //   onClick={() => handleChange(el.id)}
-                      placeholder="QTY:1"
-                    >
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                    </Select>
+                    
                   </Box>
                   <Box display={"flex"}>
                     <Box pr={2} borderRight={"1px solid grey"}>
-                      <Text> Delivery between Nov 11 6PM-Nov 18 10PM </Text>
+                      <Text> Delivery between Feb 11 6PM-Feb 18 10PM </Text>
                     </Box>
                     <Box>
                       <Button
-                        // onClick={() => handleDelete(el)}
+                        onClick={() => handleDelete(el.id)}
                         bg={"#F6F6F7"}
                         mr={0}
                         ml={3}
@@ -153,9 +140,7 @@ const Cartdata = () => {
                       >
                         REMOVE
                       </Button>
-                      <Button bg={"#F6F6F7"} ml={5} size={"sm"}>
-                        SAVE FOR LATER
-                      </Button>
+                     
                     </Box>
                   </Box>
                 </Box>
@@ -222,7 +207,7 @@ const Cartdata = () => {
               display={"flex"}
             >
               <Text> ReuseBazaar Discount</Text>
-              <Text>-Rs,250.00</Text>
+              <Text>-Rs,2500.00</Text>
             </Box>
             <Box
               fontSize={"sm"}
@@ -244,7 +229,7 @@ const Cartdata = () => {
               display={"flex"}
             >
               <Text pl={4} color={"green"}>
-                TOTAL SAVINGS Rs.250
+                TOTAL SAVINGS Rs.2500
               </Text>
             </Box>
 
@@ -260,10 +245,7 @@ const Cartdata = () => {
                 <Text fontSize={"larger"}>Rs,{discountedPrice}</Text>
               </Box>
               <Box>
-                {/* <Link to="/checkout/payment-information"> */}
-                  {" "}
-                  {/* <Button size={"lg"}>PROCEED</Button>{" "} */}
-                {/* </Link> */}
+                  <RazorPay totalprice={discountedPrice}/>
               </Box>
             </Box>
           </Box>

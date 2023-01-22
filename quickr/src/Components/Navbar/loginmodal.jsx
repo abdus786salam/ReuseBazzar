@@ -18,7 +18,7 @@ const finallogindata={
   "password":""
 }
 
-function LoginModal(){
+function LoginModal({tokenvalue}){
   const modal1 = useDisclosure()
   const modal2 = useDisclosure()
   const modal3 = useDisclosure()
@@ -31,6 +31,7 @@ function LoginModal(){
      const [signupdetail,setSignupdetail]=useState(signupdata)
      const [finallogindetail,setFinallogindetail]=useState(finallogindata)
 
+    //  console.log(tokenvalue)
     const getlogindata=()=>{
       fetch("https://calm-pink-python-suit.cyclic.app/users")
       .then(res=>res.json())
@@ -64,7 +65,9 @@ function LoginModal(){
     .then(res=>{
         alert("user is login")
         localStorage.setItem("token",res.token)
+        tokenvalue=true
         navigate("/")
+
         modal3.onClose()
         modal1.onClose()
     })
