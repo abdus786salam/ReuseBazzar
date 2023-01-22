@@ -12,8 +12,9 @@ export const BuySell = () => {
   return (
     <>
       <Box width={"80%"} margin={"auto"} >
+        <Text textAlign={"center"} fontSize={30} marginBottom={5}>Buy and Sell from 1200+ Cities Across India</Text>
         <SimpleGrid minChildWidth="150px" spacing="40px">
-          <Box height="370px">
+          <Box height="370px" backgroundColor={"white"}>
             <Image
               width={"100%"}
               height={"25%"}
@@ -51,7 +52,7 @@ export const BuySell = () => {
              
              
           </Box> 
-          <Box  height="370px">
+          <Box  height="370px" backgroundColor={"white"}>
             <Image
               width={"100%"}
               height={"25%"}
@@ -92,7 +93,7 @@ export const BuySell = () => {
             </SimpleGrid>
 
           </Box>
-          <Box height="370px">
+          <Box height="370px" backgroundColor={"white"}>
             <Image
               width={"100%"}
               height={"25%"}

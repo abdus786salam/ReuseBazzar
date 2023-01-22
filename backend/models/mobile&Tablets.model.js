@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const BikeSchema = mongoose.Schema({
+const MobileSchema = mongoose.Schema({
   brand: {
     type: String,
     required: true,
@@ -8,7 +8,11 @@ const BikeSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  year: {
+  Model: {
+    type: String,
+    // required: true,
+  },
+  year_of_purchase: {
     type: Number,
     required: true,
   },
@@ -16,16 +20,16 @@ const BikeSchema = mongoose.Schema({
     type: Number,
     required: true,
   },
-  model: {
-    type: String,
-    required: true,
-  },
-  kms_driven: {
-    type: String,
-    required: true,
-  },
   image: {
     type: String,
+  },
+  ad_description: {
+    type: String,
+    required: false,
+  },
+  physical_condition: {
+    type: String,
+    required: true,
   },
   ad_title: {
     type: String,
@@ -33,6 +37,6 @@ const BikeSchema = mongoose.Schema({
   },
 });
 
-const Bikemodel = mongoose.model("bike", BikeSchema);
+const Mobilesmodel = mongoose.model("mobile", MobileSchema);
 
-module.exports = { Bikemodel };
+module.exports = { Mobilesmodel };

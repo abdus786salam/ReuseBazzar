@@ -4,6 +4,7 @@ const registerSchema = mongoose.Schema({
   email: String,
   mobile: Number,
   password: String,
+  userID: String,
 });
 const RegisterModel = mongoose.model("user", registerSchema);
 module.exports = {
