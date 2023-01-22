@@ -1,0 +1,12 @@
+
+.overFlowDiv {
+    background-color: white;
+    position: fixed;
+    margin-top: 5px;
+    width: 500px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    text-align: left;
+    padding-left: 15px;
+    z-index: 20;
+  }

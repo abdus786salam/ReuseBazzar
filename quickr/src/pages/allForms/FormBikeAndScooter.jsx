@@ -10,10 +10,10 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import FormHeaders from "../../components/formComponents/FormHeaders";
-import FormSidebar from "../../components/formComponents/FormSidebar";
-import ImageInputBox from "../../components/formComponents/ImageInputBox";
-import PostAdPlans from "../../components/formComponents/PostAdPlans";
+import FormHeaders from "../../Components/formComponents/FormHeaders";
+import FormSidebar from "../../Components/formComponents/FormSidebar";
+import ImageInputBox from "../../Components/formComponents/ImageInputBox";
+import PostAdPlans from "../../Components/formComponents/PostAdPlans";
 
 const FormBikeAndScooter = () => {
   const [data,setData] = useState([])

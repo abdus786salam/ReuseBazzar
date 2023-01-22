@@ -4,7 +4,8 @@ function Card({ img, category }) {
   return (
    
       <div className="mycard">
-        <img src={img} alt={category} />
+
+        <img  src={img} alt={category} />
         <div>{category}</div>
       </div>
    

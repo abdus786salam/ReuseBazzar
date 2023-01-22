@@ -3,6 +3,8 @@ import { useState } from "react"
 import {useNavigate} from "react-router-dom"
 import {FaFacebookSquare} from "react-icons/fa"
 import {FcGoogle} from "react-icons/fc"
+import { BiUserCircle } from "react-icons/bi"
+
 // import { Signupform } from "./Signupform"
 
 const signupdata={
@@ -16,7 +18,7 @@ const finallogindata={
   "password":""
 }
 
-function LoginModal(){
+function LoginModal({tokenvalue}){
   const modal1 = useDisclosure()
   const modal2 = useDisclosure()
   const modal3 = useDisclosure()
@@ -29,13 +31,14 @@ function LoginModal(){
      const [signupdetail,setSignupdetail]=useState(signupdata)
      const [finallogindetail,setFinallogindetail]=useState(finallogindata)
 
+    //  console.log(tokenvalue)
     const getlogindata=()=>{
-      fetch("http://localhost:8080/users")
+      fetch("https://calm-pink-python-suit.cyclic.app/users")
       .then(res=>res.json())
       .then(res=>setLogindata(res))
     }
     const registeruser=()=>{
-      fetch("http://localhost:8080/users/register",{
+      fetch("https://calm-pink-python-suit.cyclic.app/users/register",{
         method:"POST",
         body:JSON.stringify(signupdetail),
         headers:{
@@ -51,7 +54,7 @@ function LoginModal(){
       })
     }
      const checklogindata=()=>{
-      fetch("http://localhost:8080/users/login",{
+      fetch("https://calm-pink-python-suit.cyclic.app/users/login",{
         method:"POST",
         body:JSON.stringify(finallogindetail),
         headers:{
@@ -62,7 +65,9 @@ function LoginModal(){
     .then(res=>{
         alert("user is login")
         localStorage.setItem("token",res.token)
+        tokenvalue=true
         navigate("/")
+
         modal3.onClose()
         modal1.onClose()
     })
@@ -114,7 +119,11 @@ function LoginModal(){
 
 return(
           <>
-            <Button onClick={modal1.onOpen}>Login/Register</Button>
+            
+            <Button onClick={modal1.onOpen} bg="none">
+                 <BiUserCircle size="1.5rem"/>  
+              Login/Register
+            </Button>
              {/* modal1 */}
             <Modal size="xl"  closeOnOverlayClick={false} isOpen={modal1.isOpen} onClose={modal1.onClose}>
               <ModalOverlay />

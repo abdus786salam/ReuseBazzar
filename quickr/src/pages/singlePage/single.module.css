@@ -1,0 +1,42 @@
+.form
+{
+  position: relative;
+  outline: none;
+  width: 100%;
+}
+.textbox
+{
+    width: 100%;
+  border-radius: 5px;
+  outline: none;
+  background: none;
+  border: 1px solid;
+  padding:17px;
+}
+.formlabel
+{
+    position: absolute;
+    top:0.8rem;
+    left: 1.4rem;
+    cursor: text;
+    font-size: larger;
+    transition: top 200ms ease-in, left 200ms,fontSize 200ms ease-in;
+}
+.textbox:focus
+{
+    border: 2px solid rgb(87,153,215);
+}
+.textbox:focus ~ .formlabel,
+.textbox:not(:placeholder-shown).textbox:not(:focus)~.formlabel
+{
+    top: -0.7rem;
+    padding: 0px 10px;
+    left: 0.5rem;
+    font-size: medium;
+    background: white;
+    color: rgb(87,153,215);   
+}
+
+
+
+

@@ -1,9 +1,18 @@
 .mycard{
-    min-width:170px;
-    max-width:170px;
+    min-width:160px;
+    max-width:160px;
     height:150px;
- 
+    text-align: center;
+    align-items: center;
+    /* background-color: red; */
     margin:10px;
     color: black;
     
+}
+.mycard>img{
+    height: 100px;
+    width:120px;
+    text-align: center;
+    margin-left: 20px;
+    /* color: blue; */
 }
