@@ -29,3 +29,35 @@
 * Styled Components
 * Framer Motion
 * Axios
+
+
+## 1. Home Page
+
+![Capture](https://user-images.githubusercontent.com/101567617/213965954-89f2a17a-284c-41e5-bf80-0b70b3e3244a.JPG)
+
+## 2. Category Page
+
+![category page](https://user-images.githubusercontent.com/101567617/213966052-594dcf33-caf3-444c-8680-846f3c645f9a.JPG)
+
+## 3. Cart Page
+
+![cartpage](https://user-images.githubusercontent.com/101567617/213966152-c4f1c293-252c-421f-a85e-a38371dfc1ff.JPG)
+
+## 4. Login Form
+
+![login page](https://user-images.githubusercontent.com/101567617/213966217-c0fbf97e-7ad5-4d26-9e5a-66b7e4b2c1c4.JPG)
+
+## 5. Post ads Page
+
+![Post Ad page](https://user-images.githubusercontent.com/101567617/213966384-e7df02dc-68c5-459d-abe2-97dcf35fd092.JPG)
+
+## 6. Post Ad Form
+
+![post ad form](https://user-images.githubusercontent.com/101567617/213966419-8ff7123c-0cae-4a5c-bde8-7cc32a46d535.JPG)
+
+
+
+
+
+
+
