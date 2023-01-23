@@ -4,6 +4,7 @@
 ![revised-logo-removebg-preview](https://user-images.githubusercontent.com/101567617/213376453-2316aeb0-5717-44a8-899e-f51ec9bf8adc.png) -->
 
 * Project Live Link https://astonishing-fairy-afcadf.netlify.app/
+* Project explanation Video https://drive.google.com/file/d/1zIar72d2i4vi3kmQU5VBty7cyp6h9G1F/view
 
 ## Members (Assigned To)
 * **Abdus Salam**
