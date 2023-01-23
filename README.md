@@ -58,7 +58,10 @@
 
 ![post ad form](https://user-images.githubusercontent.com/101567617/213966419-8ff7123c-0cae-4a5c-bde8-7cc32a46d535.JPG)
 
+## 7. Payment With RazorPay
 
+
+![payment page](https://user-images.githubusercontent.com/101567617/214093860-91874bf9-28a5-4a87-8cb6-10138eab2ed5.JPG)
 
 
 
