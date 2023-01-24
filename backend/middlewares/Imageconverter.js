@@ -1,4 +1,5 @@
 const fs = require("fs");
+require('dotenv').config()
 var cloudinary = require("cloudinary");
 const converter = async (req, res, next) => {
   console.log("body", req.files);
@@ -8,9 +9,9 @@ const converter = async (req, res, next) => {
     return res.status(400).json({ error: "Image file is required" });
   }
   cloudinary.config({
-    cloud_name: "dy5cxcpv1",
-    api_key: "688439182555579",
-    api_secret: "DYdOe9Xao56lLsiKrpjD_LH5wAs",
+    cloud_name:process.env.cloudinary_cloud_name,
+    api_key: process.env.cloudinary_api_key,
+    api_secret:process.env.cloudinary_api_secret,
     secure: true,
   });
   try {
