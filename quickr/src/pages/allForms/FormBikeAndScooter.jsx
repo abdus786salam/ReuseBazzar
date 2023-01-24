@@ -10,37 +10,67 @@ import {
   VStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import axios from 'axios'
 import FormHeaders from "../../Components/formComponents/FormHeaders";
 import FormSidebar from "../../Components/formComponents/FormSidebar";
 import ImageInputBox from "../../Components/formComponents/ImageInputBox";
 import PostAdPlans from "../../Components/formComponents/PostAdPlans";
+import { useNavigate } from "react-router-dom";
+
+
+const initiaData={
+  brand: "",
+  model: "",
+  year: "",
+  condition: "",
+  ad_title: "",
+  price: "",
+  mobile: "",
+}
 
 const FormBikeAndScooter = () => {
-  const [data,setData] = useState([])
-  const [formData, setFormData] = useState({
-    brand: "",
-    model: "",
-    year: "",
-    condition: "",
-    ad_title: "",
-    price: "",
-    mobile: "",
-    image:"",
-  });
+  const navigate=useNavigate()
+  const [image,setImage] = useState("")
+  const [data, setData] = useState(initiaData);
 
   const handleChange = (e) => {
-    const { name, value,files } = e.target;
-   let newVal=name==="image"?files[0]:value
-   console.log("newVal",newVal)
-    setFormData({ ...formData, [name]: newVal });
+    const { name, value } = e.target;
+   
+     setData({ ...data, [name]:value });
+   
   };
+
+  const handleChangeImage=(e)=>{
+    console.log(e.target.files[0])
+    setImage(e.target.files[0])
+  }
 
   const handleSubmit = (e)=>{
     e.preventDefault()
-    setData([...data,formData])
+    const formData=new FormData()
+    formData.append('brand',data.brand)
+    formData.append('model',data.model)
+    formData.append('year',data.year)
+    formData.append('condition',data.condition)
+    formData.append('ad_title',data.ad_title)
+    formData.append('price',data.price)
+    formData.append('mobile',data.mobile)
+    formData.append('image',image)
+    axios
+    .post("http://localhost:8080/upload", formData, {
+      headers: {
+        "Content-Type": "multipart/form-data"
+      }
+    })
+    .then((res) => {
+      navigate('/')
+      setData(initiaData)
+      setImage("")
+      alert("your post has been posted")
+    });
   }
 
-  console.log(formData,data);
+ 
   return (
     <Box bg="#fafafa" w="100%" px={{ lg: 100 }} pt="5" pb="10">
       <FormHeaders />
@@ -59,7 +89,7 @@ const FormBikeAndScooter = () => {
                       placeholder="Brand Name"
                       name="brand"
                       onChange={handleChange}
-                      value={formData.brand}
+                      value={data.brand}
                     />
                   </FormControl>
                   <FormControl isRequired>
@@ -69,7 +99,7 @@ const FormBikeAndScooter = () => {
                       placeholder="Model"
                       name="model"
                       onChange={handleChange}
-                      value={formData.model}
+                      value={data.model}
                     />
                   </FormControl>
                 </HStack>
@@ -81,7 +111,7 @@ const FormBikeAndScooter = () => {
                       placeholder="Year of Purchase"
                       name="year"
                       onChange={handleChange}
-                      value={formData.year}
+                      value={data.year}
                     />
                   </FormControl>
                   <FormControl isRequired>
@@ -91,7 +121,7 @@ const FormBikeAndScooter = () => {
                       placeholder="Physical Condition"
                       name="condition"
                       onChange={handleChange}
-                      value={formData.condition}
+                      value={data.condition}
                     />
                   </FormControl>
                 </HStack>
@@ -102,7 +132,7 @@ const FormBikeAndScooter = () => {
                     placeholder="Ad Title"
                     name="ad_title"
                     onChange={handleChange}
-                    value={formData.ad_title}
+                    value={data.ad_title}
                   />
                 </FormControl>
                 <HStack pt={10}>
@@ -113,7 +143,7 @@ const FormBikeAndScooter = () => {
                       placeholder="Price"
                       name="price"
                       onChange={handleChange}
-                      value={formData.price}
+                      value={data.price}
                     />
                   </FormControl>
                   <FormControl isRequired>
@@ -124,7 +154,7 @@ const FormBikeAndScooter = () => {
                       placeholder="Mobile Number"
                       name="mobile"
                       onChange={handleChange}
-                      value={formData.mobile}
+                      value={data.mobile}
                     />
                   </FormControl>
                 </HStack>
@@ -134,8 +164,7 @@ const FormBikeAndScooter = () => {
                 <HStack>
                   <ImageInputBox
                     name="image"
-                    onChange={handleChange}
-                    value={formData.image}
+                    onChange={handleChangeImage}
                   />
                 </HStack>
                 <Box mt="5" border="1px solid lightgray">

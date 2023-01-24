@@ -10,13 +10,9 @@ import { Booklist } from '../Components/HomePage/productlist'
 import { Subcategory } from '../Components/HomePage/subcategory'
 import SinglePage from '../pages/singlePage/SinglePage'
 
-
-import PostAds from "../pages/postProducts/PostAds";
-
 const AllRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
       <Route path="/" element={<Home/>}/>
       <Route path="/cart" element={<Cartdata/>}/>
       <Route path="/:param" element={<Subcategory/>}/>
